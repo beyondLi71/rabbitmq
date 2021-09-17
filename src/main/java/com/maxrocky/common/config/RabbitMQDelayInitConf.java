@@ -1,4 +1,4 @@
-package com.maxrocky.config;/**
+package com.maxrocky.common.config;/**
  * Created by beyondLi on 2021/9/6 18:26
  */
 
@@ -51,7 +51,7 @@ public class RabbitMQDelayInitConf {
     }
 
     //绑定交换机与队列关系
-    @Bean
+    @Bean("delayBinding")
     public Binding commonQueueBindingCommonExchange(@Qualifier("delayQueue") Queue delayQueue, @Qualifier("delayExchange") CustomExchange delayExchange){
         return BindingBuilder.bind(delayQueue).to(delayExchange).with(DELAY_ROUTE).noargs();
     };
