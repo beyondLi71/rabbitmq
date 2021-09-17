@@ -34,14 +34,16 @@ public class RabbitMQCallBack implements RabbitTemplate.ConfirmCallback, RabbitT
     public void confirm(CorrelationData correlationData, boolean ack, String cause) {
         if (ack) {
             //消息发送成功
+            System.out.println("消息发送成功");
             if (correlationData != null) {
-                System.out.println("消息发送成功，内容为" + correlationData.getId());
+                System.out.println("内容为" + correlationData.getId());
             }
         }else {
             //消息发送失败
+            System.out.println("消息发送失败");
             if (correlationData != null) {
-                System.out.println("消息发送失败，原因为" + cause);
-                System.out.println("消息发送失败，内容为" + correlationData.getId());
+                System.out.println("原因为" + cause);
+                System.out.println("内容为" + correlationData.getId());
             }
         }
     }
