@@ -1,4 +1,4 @@
-package com.maxrocky.listener;/**
+package com.maxrocky.common.listener;/**
  * Created by beyondLi on 2021/9/15 11:51
  */
 
@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 
 /**
  * @Description: 延迟队列监听
- * @ClassName: DeadQueueListener
+ * @ClassName: DelayQueueListener
  * @Author: beyondLi
  * @Date: 2021/9/15 11:51   
  */

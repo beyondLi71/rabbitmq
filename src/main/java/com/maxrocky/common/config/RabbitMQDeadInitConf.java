@@ -1,4 +1,4 @@
-package com.maxrocky.config;/**
+package com.maxrocky.common.config;/**
  * Created by beyondLi on 2021/9/6 18:26
  */
 
@@ -12,12 +12,12 @@ import java.util.Map;
 
 /**
  * @Description:
- * @ClassName: RabbitMQ初始化配置
+ * @ClassName: RabbitMQ死信队列初始化配置
  * @Author: beyondLi
  * @Date: 2021/9/6 18:26   
  */
-//@Component
-public class RabbitMQInitConf {
+@Component
+public class RabbitMQDeadInitConf {
 
     //交换机、路由及队列名称
     //普通交换机
@@ -67,7 +67,7 @@ public class RabbitMQInitConf {
 
     //绑定交换机与队列关系
     //普通绑定
-    @Bean
+    @Bean("deadBinding")
     public Binding commonQueueBindingCommonExchange(@Qualifier("commonQueue") Queue commonQueue, @Qualifier("commonExchange") DirectExchange commonExchange){
         return BindingBuilder.bind(commonQueue).to(commonExchange).with(COMMON_ROUTE);
     };
